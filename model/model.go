@@ -6,9 +6,9 @@ import (
 	"io/ioutil"
 	"strconv"
 	"regexp"
-	"github.com/blinry/goyaml"
-	"github.com/blinry/nutsh/parser"
-	"github.com/blinry/nutsh/cli"
+	"github.com/tubs-ips/goyaml"
+	"github.com/tubs-ips/nutsh/parser"
+	"github.com/tubs-ips/nutsh/cli"
 	"time"
 )
 

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 	//"io/ioutil"
-	"github.com/blinry/nutsh/model"
-	"github.com/blinry/nutsh/parser"
+	"github.com/tubs-ips/nutsh/model"
+	"github.com/tubs-ips/nutsh/parser"
 )
 
 func main() {

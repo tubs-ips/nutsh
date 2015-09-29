@@ -2,7 +2,7 @@ package dsl
 
 import (
 	"fmt"
-	"github.com/blinry/nutsh/cli"
+	"github.com/tubs-ips/nutsh/cli"
 	"os"
 	"os/exec"
 	"os/signal"
