@@ -48,7 +48,7 @@ func Init(dir string) Tutorial {
 
 	for day, max := range tut.Days {
 		date, _ := time.Parse("2006-01-02", day)
-		if date.Before(time.Now()) {
+		if date.Before(time.Now()) && max > high {
 			high = max
 		}
 	}
