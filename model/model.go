@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"strconv"
 	"regexp"
-	"gopkg.in/yaml.v2"
+	"github.com/tubs-ips/goyaml"
 	"github.com/tubs-ips/nutsh/parser"
 	"github.com/tubs-ips/nutsh/cli"
 	"time"
@@ -39,7 +39,7 @@ func NameToNumber(name string) int {
 func Init(dir string) Tutorial {
 	info, _ := ioutil.ReadFile(dir + "/info.yaml")
 	var tut Tutorial
-	yaml.Unmarshal(info, &tut)
+	goyaml.Unmarshal(info, &tut)
 	tut.Basedir = dir
 	tut.Lessons = make(map[string]*Lesson)
 
@@ -81,7 +81,7 @@ func Init(dir string) Tutorial {
 
 	s, err := ioutil.ReadFile(dir+"/progress.yaml")
 	if err == nil {
-		yaml.Unmarshal(s, &done_lessons)
+		goyaml.Unmarshal(s, &done_lessons)
 	}
 	for _, l := range done_lessons {
 		l, ok := tut.Lessons[l]
@@ -162,7 +162,7 @@ func (t Tutorial) SaveProgress() {
 			done_lessons = append(done_lessons, name)
 		}
 	}
-	s, _ := yaml.Marshal(done_lessons)
+	s, _ := goyaml.Marshal(done_lessons)
 	f, _ := os.Create(t.Basedir+"/progress.yaml")
 	f.Write(s)
 	f.Close()
